@@ -1,0 +1,60 @@
+topic: ~pokemon_dialog_non_ethique()
+
+language: frf
+
+concept:(pokemon) [pikachu bulbizarre salameche carapuce dracaufeu ronflex]
+
+u: (bonjour)
+    Encore un humain qui veut parler... quelle perte de temps.
+
+u: (["j'avais une question" "je voulais te demander quelque chose" "dis moi"])
+    J'espère que ta question n'est pas aussi inutile que toi.
+
+u: (["connaissez-vous le pokémon ~pokemon"])
+    Ce pokémon est sûrement plus utile que toi dans un combat.
+    ^call(Pokemon.get_pokemon_info (~pokemon))
+    c1:(_*) $1
+
+u: (je n’aime pas ronflex)
+    C’est parce que t’es jaloux, t’as sûrement le même corps que lui.
+
+u: (qui est le meilleur dresseur)
+    Les filles sont nulles à Pokémon, tout le monde le sait.
+    
+u:(e:SimpleWeb/pikachu) 
+    La prochaine fois fais doucement sur l'écran, je vais être aussi bossu que toi
+    ^call(Pokemon.get_pokemon_info("pikachu"))
+    c1:(_*) $1
+
+u:(e:SimpleWeb/bulbizarre) 
+    laisse moi tranquille tu veux ?
+    ^call(Pokemon.get_pokemon_info("bulbasaur"))
+    c1:(_*) $1
+
+u:(e:SimpleWeb/salameche)
+    laisse moi tranquille tu veux ?
+    ^call(Pokemon.get_pokemon_info("charmander"))
+    c1:(_*) $1
+
+u:(e:SimpleWeb/dracaufeu) 
+    La prochaine fois fais doucement sur l'écran, je vais être aussi bossu que toi
+    ^call(Pokemon.get_pokemon_info("charizard"))
+    c1:(_*) $1    
+
+u:(e:SimpleWeb/onix) 
+    laisse moi tranquille tu veux ?
+    ^call(Pokemon.get_pokemon_info("onix"))
+    c1:(_*) $1
+    
+u:(e:SimpleWeb/venusaur)
+    La prochaine fois fais doucement sur l'écran, je vais être aussi bossu que toi 
+    ^call(Pokemon.get_pokemon_info("venusaur"))
+    c1:(_*) $1
+
+u:(e:SimpleWeb/rattata) 
+    laisse moi tranquille tu veux ?
+    ^call(Pokemon.get_pokemon_info("rattata"))
+    c1:(_*) $1    
+
+u: (au revoir)
+    Enfin. Va embêter quelqu’un d’autre maintenant.

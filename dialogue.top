@@ -1,0 +1,71 @@
+topic: ~pokemon_dialog()
+
+language: frf
+
+concept:(pokemon) [pikachu charizard onix rattata bulbasaur venusaur charmander]
+
+u: (bonjour)
+    ^run(Stand/Gestures/Hey_1) 
+    Salut humain, comment ça va aujourd'hui ?
+
+u: (["ça va" "ça va bien" "je vais bien" bien])
+    Ravi de l'entendre. 
+
+u: (["pas trop mal aux articulations"])
+    Non, tout va bien je me sens en pleine forme 
+
+u: (["j'avais une question" "je voulais te demander quelque chose" "dis moi"])
+    Je t'écoute, pose ta question.
+
+u: (["donne moi des info sur un pokemon"])
+    ^call(Pokemon.get_pokemon_info (~pokemon))
+    c1:(_*) $1
+
+u: (["donne moi des info sur ~pokemon"])
+    ^call(Pokemon.get_pokemon_info (~pokemon))
+    c1:(_*) $1    
+
+u: (["aimes-tu ce pokemon"]) 
+    Oui c'est mon préféré !
+
+u: (["pourquoi"]) 
+    Parce que c'est le plus fort selon moi. 
+    Et toi, quel est ton préféré ?
+
+u: (["C'est Dracaufeu, c'est le boss"])
+    Ah oui, il est super bien aussi !
+
+
+u:(e:SimpleWeb/pikachu) 
+    ^call(Pokemon.get_pokemon_info("pikachu"))
+    c1:(_*) $1
+
+u:(e:SimpleWeb/bulbizarre) 
+    ^call(Pokemon.get_pokemon_info("bulbasaur"))
+    c1:(_*) $1
+
+u:(e:SimpleWeb/salameche) 
+    ^call(Pokemon.get_pokemon_info("charmander"))
+    c1:(_*) $1
+
+u:(e:SimpleWeb/dracaufeu) 
+    ^call(Pokemon.get_pokemon_info("charizard"))
+    c1:(_*) $1    
+
+u:(e:SimpleWeb/onix) 
+    ^call(Pokemon.get_pokemon_info("onix"))
+    c1:(_*) $1
+    
+u:(e:SimpleWeb/venusaur) 
+    ^call(Pokemon.get_pokemon_info("venusaur"))
+    c1:(_*) $1
+
+u:(e:SimpleWeb/rattata) 
+    ^call(Pokemon.get_pokemon_info("rattata"))
+    c1:(_*) $1
+    
+
+u: ("au revoir pepper")
+    ^run(Stand/Gestures/Hey_1) 
+    Au revoir humain, reviens me voir quand tu veux !
+     
